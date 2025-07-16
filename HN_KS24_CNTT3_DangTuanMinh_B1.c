@@ -164,14 +164,12 @@ NodeDLL *markBook(NodeSLL **head, NodeDLL *dHead) {
         return dHead;
     }
 
-    // Xóa khỏi danh sách đang đọc
     if (!prev) {
         *head = temp->next;
     } else {
         prev->next = temp->next;
     }
 
-    // Thêm vào danh sách đã đọc
     NodeDLL *newNode = addNodeDLL(temp->book);
     newNode->next = dHead;
     if (dHead) dHead->prev = newNode;
